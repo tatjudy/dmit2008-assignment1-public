@@ -62,15 +62,42 @@ form label {
 }
 
 .display-stocks {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    margin: 30px auto;
+    border: 3px solid #d3d3d3;
+
 }
 
 .display-stocks div {
-    margin: 5px;
+    margin: 0 5px;
     padding: 10px;
+/*     border: 3px solid #d3d3d3; */
+    width: 200px;
 }
 
 h2 {
     height: 50px;
+}
+
+@media (min-width: 500px) {
+    .display-stocks {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 950px) {
+    .display-stocks {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        border: 3px solid #d3d3d3;
+        margin: 20px;
+        max-width: 90vw;
+    }
+    .display-stocks div {
+        border: none;
+        margin: 10px 5px;
+        width: fit-content;
+    }
 }

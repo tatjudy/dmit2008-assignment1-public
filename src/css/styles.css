@@ -92,7 +92,6 @@ h2 {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         border: 3px solid #d3d3d3;
-        margin: 20px;
         max-width: 90vw;
     }
     .display-stocks div {

@@ -1,0 +1,15 @@
+{
+  "name": "assignment-1",
+  "version": "1.0.0",
+  "description": "Stock Ticker Application. An app that returns stock data. Users will use the app by entering a stock symbol into a single form input. Displayed will be a total of 7 pieces of data about the stock.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html "
+  },
+  "author": "Judy Tat",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}

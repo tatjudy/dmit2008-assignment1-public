@@ -2,16 +2,23 @@
 import stockTickerModel from './models/ticker.js';
 
 let searchBtn = document.querySelector('button');
+let content = document.querySelector('main');
+let stockDisplay = document.querySelector('.display-stocks');
+let resetBtn = document.querySelector('.reset');
 
 searchBtn.addEventListener('click', function(event) {
+    //event listener for the search btn
     let symbol = document.querySelector('form input').value;
     let apiBaseUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=5min&apikey=O4H84DXOG6X22SJ5`;
 
+    
     //displayInfo();
     validate(symbol);
     if (validate(symbol) === true) {
         //console.log(symbol);
         stockTickerModel(apiBaseUrl);
+        //makes the btn visible
+        resetBtn.classList.remove('hidden');
     }
     else {
         console.log('fail');
@@ -21,6 +28,15 @@ searchBtn.addEventListener('click', function(event) {
     clearInput (symbol);
     //prevents refresh
     event.preventDefault();
+});
+
+//event listener for reseting form
+//NOT finished
+resetBtn.addEventListener('click', function(event) {
+    //function for removing content when reset is clicked
+    if (content.contains(stockDisplay)) {
+        removeElements (content, stockDisplay);
+    }
 });
 
 function clearInput (input) {
@@ -41,3 +57,8 @@ function validate () {
         return true;
     }
 }
+
+const removeElements = (theParent, theUnwantedContent) => {
+    //function removes elements
+    theParent.removeChild(theUnwantedContent);
+  }

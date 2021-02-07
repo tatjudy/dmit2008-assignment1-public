@@ -39,6 +39,7 @@ button {
     padding: 5px 5px;
     cursor: pointer;
     display: block;
+    margin-right: 20px;
 }
 
 input {
@@ -76,6 +77,14 @@ form label {
 
 h2 {
     height: 50px;
+}
+
+footer button {
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (min-width: 500px) {

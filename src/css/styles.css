@@ -63,10 +63,14 @@ form label {
 
 .display-stocks {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
 }
 
 .display-stocks div {
     margin: 5px;
     padding: 10px;
+}
+
+h2 {
+    height: 50px;
 }

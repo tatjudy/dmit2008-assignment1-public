@@ -30,10 +30,8 @@ searchBtn.addEventListener('click', function(event) {
 });
 
 //event listener for reseting form
-//NOT finished
 resetBtn.addEventListener('click', function(event) {
     //function for removing content when reset is clicked
-    //location.reload();
     let stockDisplay = document.querySelector('.display-stocks');
     let content = document.querySelector('main');
 

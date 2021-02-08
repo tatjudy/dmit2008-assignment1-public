@@ -2,8 +2,7 @@
 import stockTickerModel from './models/ticker.js';
 
 let searchBtn = document.querySelector('button');
-let content = document.querySelector('main');
-let stockDisplay = document.querySelector('.display-stocks');
+let stockDisplay = document.getElementsByClassName('.display-stocks');
 let resetBtn = document.querySelector('.reset');
 
 searchBtn.addEventListener('click', function(event) {
@@ -33,10 +32,8 @@ searchBtn.addEventListener('click', function(event) {
 //event listener for reseting form
 //NOT finished
 resetBtn.addEventListener('click', function(event) {
-    //function for removing content when reset is clicked
-    if (content.contains(stockDisplay)) {
-        removeElements (content, stockDisplay);
-    }
+    //removing content when reset is clicked
+    location.reload();
 });
 
 function clearInput (input) {
@@ -58,7 +55,7 @@ function validate () {
     }
 }
 
-const removeElements = (theParent, theUnwantedContent) => {
+const removeElements = function (theParent, theUnwantedContent) {
     //function removes elements
     theParent.removeChild(theUnwantedContent);
   }

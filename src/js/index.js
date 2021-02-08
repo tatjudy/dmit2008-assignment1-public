@@ -2,7 +2,7 @@
 import stockTickerModel from './models/ticker.js';
 
 let searchBtn = document.querySelector('button');
-let stockDisplay = document.getElementsByClassName('.display-stocks');
+let stockDisplay = document.querySelector('.display-stocks');
 let resetBtn = document.querySelector('.reset');
 
 searchBtn.addEventListener('click', function(event) {
@@ -32,8 +32,17 @@ searchBtn.addEventListener('click', function(event) {
 //event listener for reseting form
 //NOT finished
 resetBtn.addEventListener('click', function(event) {
-    //removing content when reset is clicked
-    location.reload();
+    //function for removing content when reset is clicked
+    //location.reload();
+    let stockDisplay = document.querySelector('.display-stocks');
+    let content = document.querySelector('main');
+
+    if (content.contains(stockDisplay)) {
+        removeElements(content, stockDisplay);
+        resetBtn.classList.add('hidden');
+    }
+
+    event.preventDefault();
 });
 
 function clearInput (input) {
@@ -57,5 +66,5 @@ function validate () {
 
 const removeElements = function (theParent, theUnwantedContent) {
     //function removes elements
-    theParent.removeChild(theUnwantedContent);
+    theParent.remove(theUnwantedContent);
   }
